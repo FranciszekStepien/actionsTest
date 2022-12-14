@@ -53,7 +53,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build .\eshopOnWeb.sln --configuration Release
 
       - name: dotnet publish
         working-directory: actionsTest/dotnet/eShopOnWeb-main
