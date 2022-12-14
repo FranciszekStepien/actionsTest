@@ -44,9 +44,6 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Restore dependencies
-        working-directory: actionsTest/dotnet/eShopOnWeb-main
-        run: dotnet restore
 
       - name: Build with dotnet
         working-directory: actionsTest/dotnet/eShopOnWeb-main
