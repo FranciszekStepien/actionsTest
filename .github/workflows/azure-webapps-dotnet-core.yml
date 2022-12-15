@@ -29,6 +29,10 @@ on:
 
 permissions:
   contents: read
+  
+defaults:
+      run:
+        working-directory: actionsTest/dotnet/eShopOnWeb-main
 
 jobs:
   build:
@@ -40,13 +44,11 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Set up .NET Core
-        working-directory: actionsTest/dotnet/eShopOnWeb-main
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Set up dependency caching for faster builds
-        working-directory: actionsTest/dotnet/eShopOnWeb-main
         uses: actions/cache@v3
         with:
           path: ~/.nuget/packages
@@ -55,11 +57,9 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Build with dotnet
-        working-directory: actionsTest/dotnet/eShopOnWeb-main
         run: dotnet build .\eshopOnWeb.sln --configuration Release
 
       - name: dotnet publish
-        working-directory: actionsTest/dotnet/eShopOnWeb-main
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Deploy to Azure Web App
