@@ -39,7 +39,7 @@ jobs:
 
       - name: Build
         working-directory: ./React/calculator-master
-        run: npm run build:staging
+        run: npm run build
 
       - name: "Deploy to Azure WebApp"
         uses: azure/webapps-deploy@v2
