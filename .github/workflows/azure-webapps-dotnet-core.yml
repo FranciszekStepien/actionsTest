@@ -30,9 +30,9 @@ on:
 permissions:
   contents: read
   
-defaults:
-      run:
-        working-directory: actionsTest/dotnet/eShopOnWeb-main
+# defaults:
+#       run:
+#         working-directory: actionsTest/dotnet/eShopOnWeb-main
 
 jobs:
   build:
@@ -62,7 +62,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Build with dotnet
-        run: dotnet build .\eshopOnWeb.sln --configuration Release
+        run: dotnet build actionsTest/dotnet/eShopOnWeb-main/eshopOnWeb.sln --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
