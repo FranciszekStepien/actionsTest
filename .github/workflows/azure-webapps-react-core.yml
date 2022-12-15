@@ -7,9 +7,9 @@ env:
   AZURE_WEBAPP_NAME: testReact-staging
   AZURE_WEBAPP_PACKAGE_PATH: "my-app-path"
 
-defaults:
-  run:
-    working-directory: ./React\calculator-master
+# defaults:
+#   run:
+#     working-directory: ./React/calculator-master
 
 jobs:
   build-and-deploy:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Get NodeJS Version from package.json
         run: |
-          echo "$(cat ./package.json)" | jq .engines.node | xargs -I {} echo "NodeVersion="{} >> $GITHUB_ENV
+          echo "$(cat ./React/calculator-master/package.json)" | jq .engines.node | xargs -I {} echo "NodeVersion="{} >> $GITHUB_ENV
 
       - name: Use Node.js
         uses: actions/setup-node@v2
@@ -34,9 +34,11 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Install dependencies
+        working-directory: ./React/calculator-master
         run: npm ci
 
       - name: Build
+        working-directory: ./React/calculator-master
         run: npm run build:staging
 
       - name: "Deploy to Azure WebApp"
