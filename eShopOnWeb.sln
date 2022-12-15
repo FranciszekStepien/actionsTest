@@ -2,24 +2,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{419A6ACE-0419-4315-A6FB-B0E63D39432E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "dotnet\eShopOnWeb-main\src", "{419A6ACE-0419-4315-A6FB-B0E63D39432E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "src\Web\Web.csproj", "{227CF035-29B0-448D-97E4-944F9EA850E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "dotnet\eShopOnWeb-main\src\Web\Web.csproj", "{227CF035-29B0-448D-97E4-944F9EA850E5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{7C461394-ABDC-43CD-A798-71249C58BA67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "dotnet\eShopOnWeb-main\src\Infrastructure\Infrastructure.csproj", "{7C461394-ABDC-43CD-A798-71249C58BA67}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "src\ApplicationCore\ApplicationCore.csproj", "{7FED7440-2311-4D1E-958B-3E887C585CD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "dotnet\eShopOnWeb-main\src\ApplicationCore\ApplicationCore.csproj", "{7FED7440-2311-4D1E-958B-3E887C585CD2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{15EA4737-125B-4E6E-A806-E13B7EBCDCCF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "dotnet\eShopOnWeb-main\tests", "{15EA4737-125B-4E6E-A806-E13B7EBCDCCF}"
 	ProjectSection(SolutionItems) = preProject
 		CodeCoverage.runsettings = CodeCoverage.runsettings
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{EF6877E6-59CB-43A7-8C2C-E70DD70CC5B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "dotnet\eShopOnWeb-main\tests\UnitTests\UnitTests.csproj", "{EF6877E6-59CB-43A7-8C2C-E70DD70CC5B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "tests\IntegrationTests\IntegrationTests.csproj", "{0F576306-7E2D-49B7-87B1-EB5D94CFD5FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "dotnet\eShopOnWeb-main\tests\IntegrationTests\IntegrationTests.csproj", "{0F576306-7E2D-49B7-87B1-EB5D94CFD5FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionalTests", "tests\FunctionalTests\FunctionalTests.csproj", "{7EFB5482-F942-4C3D-94B0-9B70596E6D0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionalTests", "dotnet\eShopOnWeb-main\tests\FunctionalTests\FunctionalTests.csproj", "{7EFB5482-F942-4C3D-94B0-9B70596E6D0A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0BD72BEA-EF42-4B72-8B69-12A39EC76FBA}"
 	ProjectSection(SolutionItems) = preProject
@@ -32,13 +32,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1FCBE191-34FE-4B2E-8915-CA81553958AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicApi", "src\PublicApi\PublicApi.csproj", "{B5E4F33C-4667-4A55-AF6A-740F84C4CF3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicApi", "dotnet\eShopOnWeb-main\src\PublicApi\PublicApi.csproj", "{B5E4F33C-4667-4A55-AF6A-740F84C4CF3A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAdmin", "src\BlazorAdmin\BlazorAdmin.csproj", "{71368733-80A4-4869-B215-3A7001878577}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAdmin", "dotnet\eShopOnWeb-main\src\BlazorAdmin\BlazorAdmin.csproj", "{71368733-80A4-4869-B215-3A7001878577}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShared", "src\BlazorShared\BlazorShared.csproj", "{715CF7AF-A1EE-40A6-94A0-8DA3F3B2CAE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShared", "dotnet\eShopOnWeb-main\src\BlazorShared\BlazorShared.csproj", "{715CF7AF-A1EE-40A6-94A0-8DA3F3B2CAE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicApiIntegrationTests", "tests\PublicApiIntegrationTests\PublicApiIntegrationTests.csproj", "{D53EF010-8F8C-4337-A059-456E19D8AE63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicApiIntegrationTests", "dotnet\eShopOnWeb-main\tests\PublicApiIntegrationTests\PublicApiIntegrationTests.csproj", "{D53EF010-8F8C-4337-A059-456E19D8AE63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
