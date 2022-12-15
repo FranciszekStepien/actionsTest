@@ -20,25 +20,21 @@
 name: Build and deploy ASP.Net Core app to an Azure Web App
 
 env:
-  AZURE_WEBAPP_NAME: your-app-name    # set this to the name of your Azure Web App
-  AZURE_WEBAPP_PACKAGE_PATH: './dotnet/eShopOnWeb-main'      # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '6.0.x'                 # set this to the .NET Core version to use
+  AZURE_WEBAPP_NAME: your-app-name # set this to the name of your Azure Web App
+  AZURE_WEBAPP_PACKAGE_PATH: "./dotnet/eShopOnWeb-main" # set this to the path to your web app project, defaults to the repository root
+  DOTNET_VERSION: "6.0.x" # set this to the .NET Core version to use
 
 on:
   workflow_dispatch:
 
 permissions:
   contents: read
-  
-# defaults:
-#       run:
-#         working-directory: actionsTest/dotnet/eShopOnWeb-main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     environment:
-      name: 'Development'
+      name: "Development"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     steps:
       - uses: actions/checkout@v3
@@ -47,11 +43,6 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-          
-#       - name: Set up JDK 11
-#         uses: actions/setup-java@v1
-#         with:
-#           java-version: 1.11
 
       - name: Set up dependency caching for faster builds
         uses: actions/cache@v3
