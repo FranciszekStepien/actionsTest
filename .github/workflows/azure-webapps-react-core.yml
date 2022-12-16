@@ -5,7 +5,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: testReact-staging
-  AZURE_WEBAPP_PACKAGE_PATH: "./React/calculator-master"
+  AZURE_WEBAPP_PACKAGE_PATH: "React/calculator-master"
 
 # defaults:
 #   run:
@@ -16,7 +16,7 @@ jobs:
     name: Build and deploy frontend
     runs-on: ubuntu-latest
     environment:
-      name: "Development"
+      name: "Development-new"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -31,15 +31,21 @@ jobs:
         with:
           node-version: ${{env.NodeVersion}}
           cache: "npm"
-          cache-dependency-path: ./React/calculator-master/package.json
+          cache-dependency-path: React/calculator-master/package.json
 
       - name: Install dependencies
-        working-directory: ./React/calculator-master
+        working-directory: React/calculator-master
         run: npm ci
 
       - name: Build
-        working-directory: ./React/calculator-master
+        working-directory: React/calculator-master
         run: npm run build
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-app
+          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
       - name: "Deploy to Azure WebApp"
         uses: azure/webapps-deploy@v2
